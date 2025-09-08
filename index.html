@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive JavaScript Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Interactive JavaScript Project</h1>
+      <p>Event Handling, Interactive Elements, and Form Validation</p>
+    </header>
+
+    <!-- Part 1: Event Handling Demo -->
+    <section class="section">
+      <h2>🎯 Part 1: Event Handling Showcase</h2>
+      <p>This section demonstrates various event types including clicks, hovers, keyboard input, and more.</p>
+      
+      <div style="margin: 20px 0;">
+        <button class="btn btn-primary" id="clickDemo">Click Me!</button>
+        <button class="btn btn-warning" id="hoverDemo">Hover Over Me!</button>
+        <input type="text" id="keyboardDemo" placeholder="Type something here..." 
+          style="margin: 10px; padding: 10px; border-radius: 5px; border: 2px solid var(--border-color);">
+      </div>
+      
+      <div id="eventOutput" style="padding: 15px; background: rgba(52, 152, 219, 0.1); border-radius: 5px; min-height: 50px; margin-top: 15px;">
+        <p>Event messages will appear here...</p>
+      </div>
+    </section>
+
+    <!-- Part 2: Interactive Elements -->
+    <section class="section">
+      <h2>🎮 Part 2: Interactive Elements</h2>
+      
+      <div class="interactive-grid">
+        <!-- Counter Game -->
+        <div class="counter-container">
+          <h3>Counter Game</h3>
+          <div class="counter-display" id="counterDisplay">0</div>
+          <div class="counter-buttons">
+            <button class="btn btn-success" id="incrementBtn">+1</button>
+            <button class="btn btn-warning" id="decrementBtn">-1</button>
+            <button class="btn btn-primary" id="multiplyBtn">×2</button>
+            <button class="btn btn-danger" id="resetBtn">Reset</button>
+          </div>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div>
+          <h3>Custom Dropdown Menu</h3>
+          <div class="dropdown">
+            <button class="dropdown-toggle" id="dropdownToggle">
+              Select Option ▼
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu">
+              <a href="#" class="dropdown-item" data-value="option1">Option 1</a>
+              <a href="#" class="dropdown-item" data-value="option2">Option 2</a>
+              <a href="#" class="dropdown-item" data-value="option3">Option 3</a>
+              <a href="#" class="dropdown-item" data-value="option4">Option 4</a>
+            </div>
+          </div>
+          <p id="selectedOption" style="margin-top: 10px; font-style: italic;">No option selected</p>
+        </div>
+      </div>
+
+      <!-- Collapsible FAQ -->
+      <div style="margin-top: 30px;">
+        <h3>Collapsible FAQ Section</h3>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What is JavaScript?</span>
+              <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+              JavaScript is a high-level, interpreted programming language that enables interactive web pages and dynamic content.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do event listeners work?</span>
+              <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+              Event listeners are functions that wait for specific events (like clicks or keypresses) and then execute code in response.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What is DOM manipulation?</span>
+              <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+              DOM manipulation involves using JavaScript to dynamically change HTML elements and styling after the page has loaded.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabbed Interface -->
+      <div class="tabs-container">
+        <h3>Tabbed Interface</h3>
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="tab1">Home</button>
+          <button class="tab-button" data-tab="tab2">About</button>
+          <button class="tab-button" data-tab="tab3">Services</button>
+          <button class="tab-button" data-tab="tab4">Contact</button>
+        </div>
+        
+        <div class="tab-content active" id="tab1">
+          <h4>Welcome to the Home Tab</h4>
+          <p>This is the home tab content.</p>
+        </div>
+        <div class="tab-content" id="tab2">
+          <h4>About Us</h4>
+          <p>Learn more about our company, mission, and values.</p>
+        </div>
+        <div class="tab-content" id="tab3">
+          <h4>Our Services</h4>
+          <p>We offer a wide range of services including web development, UI/UX design, and mobile applications.</p>
+        </div>
+        <div class="tab-content" id="tab4">
+          <h4>Get in Touch</h4>
+          <p>Contact us today! We'd love to hear about your ideas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 3: Form Validation -->
+    <section class="section">
+      <h2>📋 Part 3: Advanced Form Validation</h2>
+      <div class="form-container">
+        <form id="registrationForm" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <div class="error-message">Please enter your full name</div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error-message">Please enter a valid email address</div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+            <div class="error-message">Please enter a valid phone number</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error-message">Password must be strong</div>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password *</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <div class="error-message">Passwords do not match</div>
+          </div>
+          <div class="form-group">
+            <label for="age">Age *</label>
+            <input type="number" id="age" name="age" required>
+            <div class="error-message">Age must be valid</div>
+          </div>
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <select id="country" name="country" required>
+              <option value="">Select your country</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="UK">United Kingdom</option>
+              <option value="AU">Australia</option>
+            </select>
+            <div class="error-message">Please select your country</div>
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio (Optional)</label>
+            <textarea id="bio" name="bio"></textarea>
+            <div class="error-message">Bio must be less than 500 characters</div>
+          </div>
+          <div class="form-feedback" id="formFeedback"></div>
+          <button type="submit" class="btn btn-success" style="width:100%; font-size:18px; padding:15px;">Register Account</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

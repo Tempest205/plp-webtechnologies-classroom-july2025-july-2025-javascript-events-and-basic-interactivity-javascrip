@@ -1,0 +1,272 @@
+/* =========================
+   GLOBAL STYLES & THEME
+========================= */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --bg-color: #f4f6f9;
+  --text-color: #2c3e50;
+  --card-bg: #ffffff;
+  --border-color: #bdc3c7;
+}
+
+body.dark-mode {
+  --bg-color: #2c3e50;
+  --text-color: #ecf0f1;
+  --card-bg: #34495e;
+  --border-color: #7f8c8d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================
+   CONTAINER & HEADER
+========================= */
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-success {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.btn-warning {
+  background-color: var(--warning-color);
+  color: white;
+}
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  z-index: 1000;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   INTERACTIVE ELEMENTS
+========================= */
+.interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Counter Game */
+.counter-container {
+  text-align: center;
+}
+.counter-display {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 15px 0;
+  color: var(--primary-color);
+}
+.counter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.dropdown-toggle {
+  padding: 12px;
+  width: 100%;
+  text-align: left;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  margin-top: 5px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+.dropdown-item {
+  padding: 12px;
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.dropdown-item:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* FAQ */
+.faq-container {
+  border-top: 1px solid var(--border-color);
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+.faq-question {
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-answer {
+  display: none;
+  padding: 0 12px 12px 12px;
+  color: #555;
+}
+.faq-item.active .faq-answer {
+  display: block;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Tabs */
+.tabs-container {
+  margin-top: 30px;
+}
+.tab-buttons {
+  display: flex;
+  margin-bottom: 10px;
+}
+.tab-button {
+  flex: 1;
+  padding: 12px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  transition: background-color 0.3s;
+}
+.tab-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+.tab-content {
+  display: none;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 8px 8px;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* =========================
+   FORM STYLES
+========================= */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+}
+.error-message {
+  display: none;
+  color: var(--danger-color);
+  font-size: 14px;
+  margin-top: 4px;
+}
+.form-feedback {
+  margin: 15px 0;
+  padding: 12px;
+  border-radius: 6px;
+  display: none;
+}
+.form-feedback.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.form-feedback.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
